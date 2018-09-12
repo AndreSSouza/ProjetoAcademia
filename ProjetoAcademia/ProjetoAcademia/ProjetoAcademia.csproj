@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Aluno.cs" />
+    <Compile Include="DAL\AlunoDAL.cs" />
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="UI\Form1.cs">
       <SubType>Form</SubType>
@@ -76,8 +78,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
