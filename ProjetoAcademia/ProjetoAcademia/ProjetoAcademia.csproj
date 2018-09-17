@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Aluno.cs" />
+    <Compile Include="BLL\Matricula.cs" />
+    <Compile Include="DAL\MatriculaDAL.cs" />
     <Compile Include="BLL\plano.cs" />
+    <Compile Include="BLL\Usuario.cs" />
     <Compile Include="DAL\AlunoDAL.cs" />
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="DAL\PlanoDAL.cs" />
