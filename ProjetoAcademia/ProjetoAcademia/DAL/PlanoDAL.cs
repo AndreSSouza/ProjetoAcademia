@@ -65,37 +65,34 @@ namespace ProjetoAcademia.DAL
             return dt;
         }
 
-        //Excluir Aluno
-        public void Excluir(BLL.Aluno alu)
+        //Excluir plano
+        public void Excluir(BLL.plano pla)
         {
-            SqlCommand cmd = new SqlCommand(@"DELETE FROM Aluno WHERE CodAluno = @CodAluno");
+            SqlCommand cmd = new SqlCommand(@"DELETE FROM Plano WHERE CodPlano = @CodPlano");
             cmd.Connection = conexao.Conectar();
-            cmd.Parameters.AddWithValue("@CodAluno", alu.CodAluno);
+            cmd.Parameters.AddWithValue("@CodPlano", pla.CodPlano);
             cmd.ExecuteNonQuery();
             conexao.Desconectar();
         }
 
         //Retornar dados
-        public BLL.Aluno RetornarDados(BLL.Aluno alu)
+        public BLL.plano RetornarDados(BLL.plano pla)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Aluno WHERE CodAluno = @CodAluno");
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Plano WHERE CodPlano = @CodPlano");
             cmd.Connection = conexao.Conectar();
-            cmd.Parameters.AddWithValue("@CodAluno", alu.CodAluno);
+            cmd.Parameters.AddWithValue("@CodPlano", pla.CodPlano);
             SqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.Read())
             {
-                alu.CodAluno = Convert.ToInt16(dr["CodAluno"]);
-                alu.Nome = dr["Nome"].ToString();
-                alu.Cpf = dr["Cpf"].ToString();
-                alu.Rg = dr["Rg"].ToString();
-                alu.Email = dr["Email"].ToString();
-                alu.DataNascimento = dr["DataNascimento"].ToString();
+                pla.CodPlano = Convert.ToInt16(dr["CodPlano"]);
+                pla.NomePlano = dr["NomePlano"].ToString();
+                pla.ValorPlano = Convert.ToDecimal(dr["ValorPlano"]);
             }
 
             dr.Close();
             conexao.Desconectar();
-            return alu;
+            return pla;
         }    
     }
 }
