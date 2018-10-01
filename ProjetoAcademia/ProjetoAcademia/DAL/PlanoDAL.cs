@@ -30,7 +30,7 @@ namespace ProjetoAcademia.DAL
         //Atualizar Plano
         public void Atualizar(BLL.plano pla)
         {
-            SqlCommand cmd = new SqlCommand(@"UPADATE Plano SET NomePlano = @NomePlano, ValorPlano = @ValorPlano WHERE CodPlano = @CodPlano");
+            SqlCommand cmd = new SqlCommand(@"UPDATE Plano SET NomePlano = @NomePlano, ValorPlano = @ValorPlano WHERE CodPlano = @CodPlano");
 
             cmd.Connection = conexao.Conectar();
 

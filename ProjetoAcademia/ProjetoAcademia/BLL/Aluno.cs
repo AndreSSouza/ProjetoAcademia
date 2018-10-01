@@ -9,13 +9,46 @@ namespace ProjetoAcademia.BLL
     class Aluno
     {
         int codAluno;
-        String nome, cpf, rg, email, dataNascimento;
 
-        public int CodAluno { get => codAluno; set => codAluno = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public string Cpf { get => cpf; set => cpf = value; }
-        public string Rg { get => rg; set => rg = value; }
-        public string Email { get => email; set => email = value; }
-        public string DataNascimento { get => dataNascimento; set => dataNascimento = value; }
+        public int CodAluno
+        {
+            get { return codAluno; }
+            set { codAluno = value; }
+        }
+
+        String nome, cpf, rg, email;
+
+        DateTime dataNascimento;
+
+        public DateTime DataNascimento
+        {
+            get { return dataNascimento; }
+            set { dataNascimento = value; }
+        }
+
+        public String Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        public String Rg
+        {
+            get { return rg; }
+            set { rg = value; }
+        }
+
+        public String Cpf
+        {
+            get { return cpf; }
+            set { cpf = value; }
+        }
+
+        public String Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+        
     }
 }

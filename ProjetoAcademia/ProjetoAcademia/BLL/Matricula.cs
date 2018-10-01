@@ -8,13 +8,38 @@ namespace ProjetoAcademia.BLL
 {
     class Matricula
     {
-        int CodMatricula, CodPlano, CodAluno;
-        String DataMatricula, DataVencimento;
+        int codMatricula, codPlano, codAluno;
 
-        public int CodMatricula1 { get => CodMatricula; set => CodMatricula = value; }
-        public int CodPlano1 { get => CodPlano; set => CodPlano = value; }
-        public int CodAluno1 { get => CodAluno; set => CodAluno = value; }
-        public string DataMatricula1 { get => DataMatricula; set => DataMatricula = value; }
-        public string DataVencimento1 { get => DataVencimento; set => DataVencimento = value; }
+        public int CodAluno
+        {
+            get { return codAluno; }
+            set { codAluno = value; }
+        }
+
+        public int CodPlano
+        {
+            get { return codPlano; }
+            set { codPlano = value; }
+        }
+
+        public int CodMatricula
+        {
+            get { return codMatricula; }
+            set { codMatricula = value; }
+        }
+        DateTime dataMatricula, dataVencimento;
+
+        public DateTime DataVencimento
+        {
+            get { return dataVencimento; }
+            set { dataVencimento = value; }
+        }
+
+        public DateTime DataMatricula
+        {
+            get { return dataMatricula; }
+            set { dataMatricula = value; }
+        }
+
     }
 }

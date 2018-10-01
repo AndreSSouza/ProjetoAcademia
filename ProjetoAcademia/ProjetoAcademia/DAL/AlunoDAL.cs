@@ -33,7 +33,7 @@ namespace ProjetoAcademia.DAL
         //Atualizar Aluno
         public void Atualizar(BLL.Aluno alu)
         {
-            SqlCommand cmd = new SqlCommand(@"UPADATE ALUNO SET Nome = @Nome, Cpf = @Cpf, Rg = @Rg, Email = @Email, DataNascimento = @DataNascimento");
+            SqlCommand cmd = new SqlCommand(@"UPDATE ALUNO SET Nome = @Nome, Cpf = @Cpf, Rg = @Rg, Email = @Email, DataNascimento = @DataNascimento");
 
             cmd.Connection = conexao.Conectar();
 
@@ -95,7 +95,7 @@ namespace ProjetoAcademia.DAL
                 alu.Cpf = dr["Cpf"].ToString();
                 alu.Rg = dr["Rg"].ToString();
                 alu.Email = dr["Email"].ToString();
-                alu.DataNascimento = dr["DataNascimento"].ToString();
+                alu.DataNascimento = Convert.ToDateTime(dr["DataNascimento"]);
             }
 
             dr.Close();
