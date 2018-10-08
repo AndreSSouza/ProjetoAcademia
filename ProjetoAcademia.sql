@@ -53,3 +53,7 @@ ALTER TABLE Matricula
 	ADD CONSTRAINT FK_Aluno
 	FOREIGN KEY (CodAluno) REFERENCES Aluno(CodAluno);
 GO
+
+SELECT m.CodMatricula AS 'Código da Matricula', p.NomePlano AS 'Plano', a.Nome AS 'Aluno', DataMatricula AS 'Data de Matricula', DataVencimento AS 'Data de Vencimento' 
+FROM Matricula m JOIN Plano p ON m.CodPlano = p.CodPlano JOIN Aluno a ON a.CodAluno = m.CodAluno
+ORDER BY a.Nome
