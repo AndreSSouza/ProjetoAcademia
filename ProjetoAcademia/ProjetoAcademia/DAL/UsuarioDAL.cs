@@ -15,7 +15,7 @@ namespace ProjetoAcademia.DAL
         
         public void Cadastrar(BLL.Usuario usu)
         {
-            SqlCommand cmd = new SqlCommand(@"INSERT INTO USUARIO (NomeUsuario, Senha,TipoUsuario ) VALUES (@NomeUsuario, @Senha, @TipoUsuario)");
+            SqlCommand cmd = new SqlCommand(@"INSERT INTO USUARIO (NomeUsuario, Senha, TipoUsuario) VALUES (@NomeUsuario, @Senha, @TipoUsuario)");
 
             cmd.Connection = conexao.Conectar();//abrindo conexão 
 
@@ -32,10 +32,11 @@ namespace ProjetoAcademia.DAL
         
         public void Atualizar(BLL.Usuario usu)
         {
-            SqlCommand cmd = new SqlCommand(@"UPDATE USUARIO SET NomeUsuario = @NomeUsuario, Senha = @Senha, TipoUsuario = @TipoUsuario");
+            SqlCommand cmd = new SqlCommand(@"UPDATE USUARIO SET NomeUsuario = @NomeUsuario, Senha = @Senha, TipoUsuario = @TipoUsuario WHERE CodUsuario = @CodUsuario");
 
             cmd.Connection = conexao.Conectar();
 
+            cmd.Parameters.AddWithValue("@CodUsuario", usu.CodUsuario);
             cmd.Parameters.AddWithValue("@NomeUsuario", usu.NomeUsuario);
             cmd.Parameters.AddWithValue("@Senha", usu.Senha);
             cmd.Parameters.AddWithValue("@TipoUsuario", usu.TipoUsuario);

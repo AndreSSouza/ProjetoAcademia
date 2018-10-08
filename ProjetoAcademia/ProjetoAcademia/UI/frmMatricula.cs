@@ -14,6 +14,15 @@ namespace ProjetoAcademia.UI
     {
         BLL.Matricula mat = new BLL.Matricula();
         DAL.MatriculaDAL matDAL = new DAL.MatriculaDAL();
+
+        //importando as classes DAL e BLL plano
+        BLL.plano plano = new BLL.plano();
+        DAL.PlanoDAL planoDAL = new DAL.PlanoDAL();
+
+        //importando as classes DAL e BLL aluno
+        BLL.Aluno aluno = new BLL.Aluno();
+        DAL.AlunoDAL alunoDAL = new DAL.AlunoDAL();
+
         bool editar = false;
 
         public frmMatricula()
@@ -23,8 +32,8 @@ namespace ProjetoAcademia.UI
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            mat.CodPlano = Convert.ToInt16(txtCodPla.Text);
-            mat.CodAluno = Convert.ToInt16(txtCodAlu.Text);
+            mat.CodPlano = Convert.ToInt16(cmbPlano.SelectedValue);
+            mat.CodAluno = Convert.ToInt16(cmbAluno.SelectedValue);
             mat.DataMatricula = Convert.ToDateTime(mtxtDataMat.Text);
             mat.DataVencimento = Convert.ToDateTime(mtxtDataVenc.Text);
 
@@ -46,6 +55,18 @@ namespace ProjetoAcademia.UI
         private void frmMatricula_Load(object sender, EventArgs e)
         {
             dgvConsulta.DataSource = matDAL.ConsultarTodos();
+
+            //preeencher planos combobox
+            cmbPlano.DataSource = planoDAL.ConsultarTodos();
+            cmbPlano.DisplayMember = "Nome do Plano";//O que aparece
+            cmbPlano.ValueMember = "Código";///o que pega
+
+            //preeencher alunos do combobox
+            cmbAluno.DataSource = alunoDAL.ConsultarTodos();
+            cmbAluno.DisplayMember = "Nome";//O que aparece
+            cmbAluno.ValueMember = "Código";///o que pega
+
+
         }
 
         private void btnLimparAlu_Click(object sender, EventArgs e)
@@ -55,17 +76,17 @@ namespace ProjetoAcademia.UI
 
         public void limpar()
         {
-            txtCodPla.Text = "";
-            txtCodAlu.Text = "";
+            cmbPlano.Text = "";
+            cmbAluno.Text = "";
             mtxtDataMat.Text = "";
             mtxtDataVenc.Text = "";
-            txtCodPla.Focus();
+            mtxtDataMat.Focus();
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            mat.CodPlano = Convert.ToUInt16(txtFiltro.Text);
-            dgvConsulta.DataSource = matDAL.ConsultarporNome(mat);
+            aluno.Nome = txtFiltro.Text;
+            dgvConsulta.DataSource = matDAL.ConsultarporNome(aluno);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -87,8 +108,8 @@ namespace ProjetoAcademia.UI
                 mat = matDAL.RetornarDados(mat);
 
                 //preenchendo txts
-                txtCodAlu.Text = Convert.ToInt16(mat.CodAluno).ToString();
-                txtCodPla.Text = Convert.ToInt16(mat.CodPlano).ToString();
+                cmbAluno.SelectedValue = mat.CodAluno;
+                cmbPlano.SelectedValue = mat.CodPlano;
                 mtxtDataMat.Text = Convert.ToDateTime(mat.DataMatricula).ToString();
                 mtxtDataVenc.Text = Convert.ToDateTime(mat.DataVencimento).ToString();
 
@@ -98,6 +119,21 @@ namespace ProjetoAcademia.UI
                 //editar para verdadeiro
                 editar = true;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtxtDataVenc_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

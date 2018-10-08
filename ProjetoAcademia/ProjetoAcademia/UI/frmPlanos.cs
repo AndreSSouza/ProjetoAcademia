@@ -93,5 +93,20 @@ namespace ProjetoAcademia.UI
                 editar = true;
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValorPla_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sifra_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -14,10 +14,7 @@ namespace ProjetoAcademia.DAL
 
         public void Cadastrar(BLL.Matricula mat)
         {
-            SqlCommand cmd = new SqlCommand(@"INSERT INTO Matricula
-( CodPlano, CodAluno, DataMatricula, DataVencimento)
-VALUES
-( @CodPlano, @CodAluno, @DataMatricula, @DataVencimento)");
+            SqlCommand cmd = new SqlCommand(@"INSERT INTO Matricula (CodPlano, CodAluno, DataMatricula, DataVencimento) VALUES (@CodPlano, @CodAluno, @DataMatricula, @DataVencimento)");
 
             cmd.Connection = con.Conectar();
 
@@ -33,9 +30,7 @@ VALUES
         }
         public void Atualizar(BLL.Matricula mat)
         {
-            SqlCommand cmd = new SqlCommand(@"UPDATE Matricula SET
-( CodPlano = @CodPlano, CodAluno = @CodAluno, DataMatricula = @DataMatricula, DataVencimento = @DataVencimento)
-VALUES");
+            SqlCommand cmd = new SqlCommand(@"UPDATE Matricula SET CodPlano = @CodPlano, CodAluno = @CodAluno, DataMatricula = @DataMatricula, DataVencimento = @DataVencimento");
 
             cmd.Connection = con.Conectar();
 
@@ -44,40 +39,31 @@ VALUES");
             cmd.Parameters.AddWithValue("@CodAluno",mat.CodAluno);
             cmd.Parameters.AddWithValue("@DataMatricula",mat.DataMatricula);
             cmd.Parameters.AddWithValue("@DataVencimento",mat.DataVencimento);
-
-            cmd.ExecuteNonQuery();
-            con.Desconectar();
+            
             cmd.ExecuteNonQuery(); //executando comando
             con.Desconectar();//fechando conexao
-
         }
 
         public DataTable ConsultarTodos()
         {
-            SqlDataAdapter da = new SqlDataAdapter(@"SELECT
-                CodMatricula AS 'Código da Matricula',
-                CodPlano AS 'Código do Plano',
-                CodAluno AS 'Código do Aluno',
-                DataMatricula AS 'Data de Matricula',
-                DataVencimento AS 'Data de Vencimento' 
-                FROM Matricula ORDER BY CodMatricula", con.Conectar());//passando comando sql
+            SqlDataAdapter da = new SqlDataAdapter(@"
+            SELECT m.CodMatricula AS 'Código da Matricula', p.NomePlano AS 'Plano', a.Nome AS 'Aluno', DataMatricula AS 'Data de Matricula', DataVencimento AS 'Data de Vencimento' 
+            FROM Matricula m JOIN Plano p ON m.CodPlano = p.CodPlano JOIN Aluno a ON a.CodAluno = m.CodAluno
+            ORDER BY a.Nome", con.Conectar());//passando comando sql
             DataTable dt = new DataTable();//criando o Datatable
             da.Fill(dt); //preenchendo o datatable
             con.Desconectar();//fecha conexao
             return dt;//retorna o datatable preenchido com dados
         }
 
-        public DataTable ConsultarporNome(BLL.Matricula mat)
+        public DataTable ConsultarporNome(BLL.Aluno alu)
         {
-            SqlDataAdapter da = new SqlDataAdapter(@"SELECT
-CodMatricula AS 'Código da Matricula',
-CodPlano AS 'Código do Plano',
-CodAluno AS 'Código do Aluno',
-DataMatricula AS 'Data de Matricula',
-DataVencimento AS 'Data de Vencimento'
-FROM Matricula
-WHERE CodMatricula LIKE @CodMatricula", con.Conectar());//passando comando sql
-            da.SelectCommand.Parameters.AddWithValue("@CodMatricula",mat.CodMatricula + "%");
+            SqlDataAdapter da = new SqlDataAdapter(@"
+            SELECT m.CodMatricula AS 'Código da Matricula', p.NomePlano AS 'Plano', a.Nome AS 'Aluno', DataMatricula AS 'Data de Matricula', DataVencimento AS 'Data de Vencimento' 
+            FROM Matricula m JOIN Plano p ON m.CodPlano = p.CodPlano JOIN Aluno a ON a.CodAluno = m.CodAluno
+            WHERE a.Nome LIKE @NOME
+            ORDER BY a.Nome", con.Conectar());//passando comando sql
+            da.SelectCommand.Parameters.AddWithValue("@NOME", alu.Nome + "%");
             DataTable dt = new DataTable();//criando o Datatable
             da.Fill(dt); //preenchendo o datatable
             con.Desconectar();//fecha conexao

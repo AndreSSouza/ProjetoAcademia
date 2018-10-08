@@ -10,7 +10,7 @@ namespace ProjetoAcademia.DAL
 {
     class Conexao
     {   //DESKTOP-81NJOA4
-        SqlConnection conexao = new SqlConnection(@"Data Source = DESKTOP-81NJOA4; Initial Catalog = ProjetoAcademia; Integrated Security = True;");
+        SqlConnection conexao = new SqlConnection(@"Data Source = .\sqlserver; Initial Catalog = ProjetoAcademia; Integrated Security = True;");
 
         public SqlConnection Conectar()
         {

@@ -28,66 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnMatriculas = new System.Windows.Forms.Button();
             this.btnPlanos = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.panel1.Controls.Add(this.btnMatriculas);
-            this.panel1.Controls.Add(this.btnPlanos);
-            this.panel1.Controls.Add(this.btnUsuarios);
-            this.panel1.Controls.Add(this.btnAluno);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Font = new System.Drawing.Font("Futura Md BT", 20.25F, System.Drawing.FontStyle.Italic);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(166, 450);
-            this.panel1.TabIndex = 2;
             // 
             // btnMatriculas
             // 
-            this.btnMatriculas.Location = new System.Drawing.Point(0, 198);
+            this.btnMatriculas.BackColor = System.Drawing.Color.Gray;
+            this.btnMatriculas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMatriculas.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Italic);
+            this.btnMatriculas.Location = new System.Drawing.Point(612, 12);
             this.btnMatriculas.Name = "btnMatriculas";
-            this.btnMatriculas.Size = new System.Drawing.Size(166, 49);
+            this.btnMatriculas.Size = new System.Drawing.Size(177, 43);
             this.btnMatriculas.TabIndex = 3;
             this.btnMatriculas.Text = "Matriculas";
-            this.btnMatriculas.UseVisualStyleBackColor = true;
+            this.btnMatriculas.UseVisualStyleBackColor = false;
             this.btnMatriculas.Click += new System.EventHandler(this.btnMatriculas_Click);
             // 
             // btnPlanos
             // 
-            this.btnPlanos.Location = new System.Drawing.Point(0, 134);
+            this.btnPlanos.BackColor = System.Drawing.Color.Gray;
+            this.btnPlanos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlanos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Italic);
+            this.btnPlanos.Location = new System.Drawing.Point(416, 12);
             this.btnPlanos.Name = "btnPlanos";
-            this.btnPlanos.Size = new System.Drawing.Size(166, 49);
+            this.btnPlanos.Size = new System.Drawing.Size(177, 43);
             this.btnPlanos.TabIndex = 2;
             this.btnPlanos.Text = "Planos";
-            this.btnPlanos.UseVisualStyleBackColor = true;
+            this.btnPlanos.UseVisualStyleBackColor = false;
             this.btnPlanos.Click += new System.EventHandler(this.btnPlanos_Click);
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 67);
+            this.btnUsuarios.BackColor = System.Drawing.Color.Gray;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Italic);
+            this.btnUsuarios.Location = new System.Drawing.Point(24, 12);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(166, 49);
+            this.btnUsuarios.Size = new System.Drawing.Size(177, 43);
             this.btnUsuarios.TabIndex = 1;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnAluno
             // 
-            this.btnAluno.Location = new System.Drawing.Point(0, 0);
+            this.btnAluno.BackColor = System.Drawing.Color.Gray;
+            this.btnAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Italic);
+            this.btnAluno.ForeColor = System.Drawing.Color.Black;
+            this.btnAluno.Location = new System.Drawing.Point(220, 12);
             this.btnAluno.Name = "btnAluno";
-            this.btnAluno.Size = new System.Drawing.Size(166, 49);
+            this.btnAluno.Size = new System.Drawing.Size(177, 43);
             this.btnAluno.TabIndex = 0;
             this.btnAluno.Text = "Alunos";
-            this.btnAluno.UseVisualStyleBackColor = true;
+            this.btnAluno.UseVisualStyleBackColor = false;
             this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click);
             // 
             // frmPrincipal
@@ -96,23 +93,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProjetoAcademia.Properties.Resources.academia;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(870, 796);
+            this.Controls.Add(this.btnMatriculas);
+            this.Controls.Add(this.btnPlanos);
+            this.Controls.Add(this.btnAluno);
+            this.Controls.Add(this.btnUsuarios);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IsMdiContainer = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPrincipal";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnMatriculas;
         private System.Windows.Forms.Button btnPlanos;
         private System.Windows.Forms.Button btnUsuarios;

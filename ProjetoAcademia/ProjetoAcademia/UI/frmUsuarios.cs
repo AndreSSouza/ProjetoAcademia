@@ -29,7 +29,7 @@ namespace ProjetoAcademia.UI
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             usu.NomeUsuario = txtNome.Text;
-            usu.Senha = txtNome.Text;
+            usu.Senha = txtSenha.Text;
             usu.TipoUsuario = txtTipo.Text;
 
             if (editar == false)
@@ -62,7 +62,8 @@ namespace ProjetoAcademia.UI
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            dgvConsulta.DataSource = usuDAL.ConsultarTodos();
+            usu.NomeUsuario = txtFiltro.Text;
+            dgvConsulta.DataSource = usuDAL.ConsultarPorNome(usu);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
