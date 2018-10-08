@@ -32,6 +32,7 @@
             this.btnPlanos = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
+            this.lblLogado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnMatriculas
@@ -87,6 +88,16 @@
             this.btnAluno.UseVisualStyleBackColor = false;
             this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click);
             // 
+            // lblLogado
+            // 
+            this.lblLogado.AutoSize = true;
+            this.lblLogado.BackColor = System.Drawing.Color.DarkGray;
+            this.lblLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Italic);
+            this.lblLogado.Location = new System.Drawing.Point(21, 76);
+            this.lblLogado.Name = "lblLogado";
+            this.lblLogado.Size = new System.Drawing.Size(0, 31);
+            this.lblLogado.TabIndex = 5;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +105,7 @@
             this.BackgroundImage = global::ProjetoAcademia.Properties.Resources.academia;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(870, 796);
+            this.Controls.Add(this.lblLogado);
             this.Controls.Add(this.btnMatriculas);
             this.Controls.Add(this.btnPlanos);
             this.Controls.Add(this.btnAluno);
@@ -107,7 +119,9 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -116,5 +130,6 @@
         private System.Windows.Forms.Button btnPlanos;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnAluno;
+        private System.Windows.Forms.Label lblLogado;
     }
 }

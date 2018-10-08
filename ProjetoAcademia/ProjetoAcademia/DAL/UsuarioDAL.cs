@@ -99,6 +99,32 @@ namespace ProjetoAcademia.DAL
             conexao.Desconectar();
             return usu;
         }
+
+        //Retornar dados LOGIN
+        public BLL.Usuario Logar(BLL.Usuario usu)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM USUARIO WHERE NomeUsuario = @NomeUsuario AND Senha = @Senha");
+            cmd.Connection = conexao.Conectar();
+            cmd.Parameters.AddWithValue("@NomeUsuario", usu.NomeUsuario);
+            cmd.Parameters.AddWithValue("@Senha", usu.Senha);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                usu.CodUsuario = Convert.ToInt16(dr["CodUsuario"]);
+                usu.NomeUsuario = dr["NomeUsuario"].ToString();
+                usu.Senha = dr["Senha"].ToString();
+                usu.TipoUsuario = dr["TipoUsuario"].ToString();
+
+            }
+            else
+            {
+                usu.CodUsuario = -1;
+            }
+            dr.Close();
+            conexao.Desconectar();
+            return usu;
+        }
     }
     
 

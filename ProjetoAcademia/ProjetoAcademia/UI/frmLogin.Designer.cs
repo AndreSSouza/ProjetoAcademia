@@ -42,7 +42,7 @@
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSenha.Location = new System.Drawing.Point(143, 131);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(6);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(329, 29);
             this.txtSenha.TabIndex = 64;
@@ -63,18 +63,19 @@
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.ForeColor = System.Drawing.Color.Black;
             this.btnEntrar.Location = new System.Drawing.Point(195, 185);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(131, 39);
             this.btnEntrar.TabIndex = 62;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // txtUsuario
             // 
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Location = new System.Drawing.Point(143, 85);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(6);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(329, 29);
             this.txtUsuario.TabIndex = 61;
@@ -128,7 +129,7 @@
             this.Controls.Add(this.lblUsuario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Italic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmLogin";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

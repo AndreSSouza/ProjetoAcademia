@@ -64,5 +64,19 @@ namespace ProjetoAcademia.UI
             usu.MdiParent = this;
             usu.Show();
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            UI.frmLogin login = new UI.frmLogin();
+            login.ShowDialog();
+            if (UI.frmLogin.logado == true)
+            {
+                lblLogado.Text = "Usuário Logado " + UI.frmLogin.nomeusuario;
+            }
+            else
+            {
+                Application.Exit();//encerra aplicação
+            }
+        }
     }
 }
