@@ -48,7 +48,7 @@ namespace ProjetoAcademia.DAL
         //Consultar Todos
         public DataTable ConsultarTodos()
         {
-            SqlDataAdapter da = new SqlDataAdapter(@"SELECT CodUsuario as 'Código', NomeUsuario as Nome, Senha, TipoUsuario as 'Tipo de Usúario'  FROM USUARIO ORDER BY Nome", conexao.Conectar());
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT CodUsuario as 'Código', NomeUsuario as Nome, TipoUsuario as 'Tipo de Usúario'  FROM USUARIO ORDER BY Nome", conexao.Conectar());
             DataTable dt = new DataTable();
             da.Fill(dt);
             conexao.Desconectar();

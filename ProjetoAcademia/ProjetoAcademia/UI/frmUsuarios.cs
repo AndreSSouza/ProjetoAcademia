@@ -101,5 +101,10 @@ namespace ProjetoAcademia.UI
                 editar = true;
             }
         }
+
+        private void dgvConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
