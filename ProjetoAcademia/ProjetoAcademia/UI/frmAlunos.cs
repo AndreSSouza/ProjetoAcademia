@@ -64,6 +64,11 @@ namespace ProjetoAcademia.UI
         private void frmAlunos_Load(object sender, EventArgs e)
         {
             dgvConsulta.DataSource = aluDAL.ConsultarTodos();
+
+            if (UI.frmLogin.tipousuario != "Administrador")
+            {
+                btnExcluir.Visible = false;
+            }
         }
 
         private void btnCadastrar_Click_1(object sender, EventArgs e)

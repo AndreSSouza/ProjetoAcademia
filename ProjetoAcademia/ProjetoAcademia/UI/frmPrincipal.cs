@@ -72,6 +72,11 @@ namespace ProjetoAcademia.UI
             if (UI.frmLogin.logado == true)
             {
                 lblLogado.Text = "Usuário Logado " + UI.frmLogin.nomeusuario;
+
+                if (UI.frmLogin.tipousuario != "Administrador")
+                {
+                    btnUsuarios.Visible = false;
+                }
             }
             else
             {

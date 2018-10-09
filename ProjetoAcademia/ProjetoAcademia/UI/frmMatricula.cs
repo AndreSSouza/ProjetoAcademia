@@ -66,6 +66,10 @@ namespace ProjetoAcademia.UI
             cmbAluno.DisplayMember = "Nome";//O que aparece
             cmbAluno.ValueMember = "Código";///o que pega
 
+            if (UI.frmLogin.tipousuario != "Administrador")
+            {
+                btnExcluir.Visible = false;
+            }
 
         }
 

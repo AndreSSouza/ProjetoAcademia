@@ -46,6 +46,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(329, 29);
             this.txtSenha.TabIndex = 64;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // lblSenha
             // 
@@ -62,7 +63,7 @@
             this.btnEntrar.BackColor = System.Drawing.Color.Gray;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.ForeColor = System.Drawing.Color.Black;
-            this.btnEntrar.Location = new System.Drawing.Point(195, 185);
+            this.btnEntrar.Location = new System.Drawing.Point(233, 186);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(131, 39);
@@ -131,6 +132,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
